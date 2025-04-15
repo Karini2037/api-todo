@@ -44,5 +44,17 @@ app.post('/tarefas', (req, res) => {
     res.status(201).json(novo)
 })
 
+//Deletar uma tarefa por ID
+app.delete('/tarefa/:id', (req, res) => {
+    const id = parseInt(req.params.id) //obtendo 0 ID na req
+    const index = tarefas.findIndex(t => t.id == id)
+
+    if(index === -1) {
+        return res.status(404).json({ erro: "Tarefa não encontratada"})
+    }
+
+    tarefas.splice(index, -1)
+    res.status(204).send
+})
 
 app.listen(3000, () => console.log("Servidor em funcionamento")); // Quando subir no servidor ele aparece essa mensagem
