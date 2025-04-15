@@ -25,12 +25,12 @@ app.post('/usuarios', (req, res) => {
 
 
 
-// Listagem de tarefas
+// Listagem de tarefas ok
 const tarefas = [
     {id: 1, descricao: "Criar a rota de listagem"},
 ];
 
-// Adicionar nova tarefa
+// Adicionar nova tarefa comiti
 
 app.get('/tarefas', (req, res) => res.json(tarefas)); // Criando rota para encontrar tarefa
 app.get('/tarefas/:id', (req, res) => { // Criando rota para somente ver um item da lista
