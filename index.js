@@ -1,6 +1,8 @@
 const express = require("express"); // Requirindo tudo do pacote express
 const app = express(); // Confidurando ele para essa variável app
+const cors = require('cors');// conexão com a biblioteca de API
 app.use(express.json()); // App vai receber tudo que recebe e envia em json
+app.use(cors());// conexão com a biblioteca de API
 
 const usuarios = [
     {id: 1, nome: "Gustavo", email: "gustavo@gmail.com"},
